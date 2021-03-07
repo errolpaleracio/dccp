@@ -16,7 +16,7 @@
                         <p>{{ $message }}</p>
                         </div>
                     @endif
-                    <form method="post" action="{{ route('create_request') }}">
+                    <form method="post" action="{{ route('create_request') }}" id="request_form">
                     @csrf
                     <div class="form-row">
                         <div class="form-group">
@@ -35,6 +35,7 @@
                                     <input type="text" name="copies[]" placeholder="No of copies" class="copies" disabled>
                                     <input class="form-check-input documents" type="checkbox" name="documents[]" value="{{ $docu->description }}">
                                     <label class="form-check-label">{{ $docu->description }}</label>
+                                    <input type="hidden" name="prices[]" value="{{ $docu->price }}">
                                 </div>
                             @endforeach
                             @error('documents')
@@ -76,8 +77,42 @@
                             @enderror                                                                      
                         </div>
                     </div>                               
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    </form>                    
+                    <!-- <button type="submit" class="btn btn-primary mr-2">Submit</button> -->
+                    </form>   
+                    
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Submit</button>
+
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" id="my_modal" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Summary</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table" id="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Request</th>
+                                                <th>No of copy</th>
+                                                <th>Price</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="okay">Okay</button>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div> <!-- Modal -->              
+
                 </div>
             </div>
         </div>

@@ -28,7 +28,6 @@ class RequestController extends Controller
     { 
         $documents = Document::all();
         $courses = Course::pluck('description', 'description')->all();
-
         
         return view('request.add_request')
         ->with('courses', $courses)
