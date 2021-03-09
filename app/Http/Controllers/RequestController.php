@@ -43,7 +43,6 @@ class RequestController extends Controller
         
         $documents = $request->documents;
         $copies = $request->copies;
-        $studies = $request->studies[0];
         $remarks = $request->remarks[0];
 
         for($i = 0; $i < count($documents); $i++)

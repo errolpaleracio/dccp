@@ -66,7 +66,8 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
             'confirm-password' => 'required',
-            'roles' => 'required'
+            'roles' => 'required',
+            'contact_no' => 'required'
         ]);
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);

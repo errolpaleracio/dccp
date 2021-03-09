@@ -74,7 +74,16 @@
                 <span style="color:red"><strong>{{ $message }}</strong></span>
             @enderror 
         </div>
-    </div>    
+    </div>  
+    <div class="col-xs-4 col-sm-4 col-md-4">
+        <div class="form-group">
+            <strong>Contact No:</strong>
+            {!! Form::text('username', null, array('placeholder' => 'Username','class' => 'form-control')) !!}
+            @error('username')
+                <span style="color:red"><strong>{{ $message }}</strong></span>
+            @enderror 
+        </div>
+    </div> 
     <div class="col-xs-4 col-sm-4 col-md-4">
         <div class="form-group">
             <strong>Role:</strong>
