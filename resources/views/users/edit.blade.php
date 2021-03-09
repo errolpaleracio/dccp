@@ -45,6 +45,12 @@
             <strong>Last Name:</strong>
             {!! Form::text('last_name', null, array('placeholder' => 'Last Name','class' => 'form-control')) !!}
         </div>
+    </div>    
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Username:</strong>
+            {!! Form::text('username', null, array('placeholder' => 'Username','class' => 'form-control')) !!}
+        </div>
     </div>        
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -52,6 +58,12 @@
             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
         </div>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Contact No:</strong>
+            {!! Form::text('contact_no', null, array('placeholder' => 'Contact No','class' => 'form-control')) !!}
+        </div>
+    </div>     
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Password:</strong>
