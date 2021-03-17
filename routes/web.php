@@ -38,6 +38,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('request/add_request', [App\Http\Controllers\RequestController::class, 'create'])->name('add_request');
     Route::post('request/create_request', [App\Http\Controllers\RequestController::class, 'store'])->name('create_request');
     Route::get('request/all_requests', [App\Http\Controllers\RequestController::class, 'index'])->name('all_request');
+    Route::get('request/view_requests', [App\Http\Controllers\RequestController::class, 'view_request'])->name('view_request');
+    Route::post('request/update_status/{trans_id}', [App\Http\Controllers\RequestController::class, 'update_status'])->name('update_status');
 });
 
 //Route::resource('products', ProductController::class);

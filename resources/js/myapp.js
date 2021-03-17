@@ -55,3 +55,80 @@ $(document).on('shown.bs.modal', '#my_modal', function(e) {
 $(document).on('click', '#okay', function(e){
     $('#request_form').submit();
 });
+
+
+
+$(document).on('shown.bs.modal', '#disapprove_modal', function(e) {
+    let button = $(e.relatedTarget)
+
+    let request_id = button.data('request');
+
+    $('#request_form').attr('action', 'update_status/' + request_id);
+});
+
+$(document).on('click', '#update_status', function(e){
+    if(confirm('Are you sure you want to disapprove this request?')){
+        let checked_length = $('input[name="reason[]"]:checked').length;
+        if(checked_length > 0){
+            $('#request_form').submit();
+        }
+        else
+            alert('Please select a reason');
+    }
+})
+let today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+$('#claim_date').datepicker({
+    uiLibrary: 'bootstrap4',
+    disableDaysOfWeek: [0, 6],
+    minDate: today,
+    format: 'yyyy-mm-dd'
+});
+
+$(document).on('shown.bs.modal', '#approve_modal', function(e) {
+    let button = $(e.relatedTarget)
+
+    let request_id = button.data('request');
+
+    let claim_date_val = $("#claim_date").val();
+
+    $('#approve_form').attr('action', 'update_status/' + request_id);
+});
+
+$(document).on('click','#approve_status', function(e){
+    $('#approve_form').submit();
+})
+
+$(document).on('shown.bs.modal', '#cancel_modal', function(e){
+    let button = $(e.relatedTarget)
+
+    let request_id = button.data('request');
+
+        $('#cancel_form').attr('action', 'update_status/' + request_id);
+});
+
+$(document).on('click', '#cancel_status', function(e){
+    if(confirm('Are you sure you want to cancel this item?'))
+        $('#cancel_form').submit();
+})
+
+$(document).on('shown.bs.modal', '#claim_modal', function(e){
+    let button = $(e.relatedTarget)
+
+    let request_id = button.data('request');
+
+    $('#claim_form').attr('action', 'update_status/' + request_id);
+});
+
+$(document).on('click', '#claim_status', function(e){
+    if(confirm('Are you sure you want to claim this item?'))
+        $('#claim_form').submit();
+})
+
+
+today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+$('#date_claimed').datepicker({
+    uiLibrary: 'bootstrap4',
+    disableDaysOfWeek: [0, 6],
+    minDate: today,
+    format: 'yyyy-mm-dd'
+});

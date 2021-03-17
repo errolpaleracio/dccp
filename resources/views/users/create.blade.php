@@ -78,7 +78,7 @@
     <div class="col-xs-4 col-sm-4 col-md-4">
         <div class="form-group">
             <strong>Contact No:</strong>
-            {!! Form::text('contact_no', null, array('placeholder' => 'Username','class' => 'form-control')) !!}
+            {!! Form::text('contact_no', null, array('placeholder' => 'Contact No','class' => 'form-control')) !!}
             @error('contact_no')
                 <span style="color:red"><strong>{{ $message }}</strong></span>
             @enderror 

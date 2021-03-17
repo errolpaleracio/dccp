@@ -190,7 +190,11 @@ return [
     */
 
     'aliases' => [
-
+        'TokenInvalidException' => Tymon\JWTAuth\Exceptions\TokenInvalidException::class,
+        'TokenExpiredException' => Tymon\JWTAuth\Exceptions\TokenExpiredException::class,
+        'JWTException' => Tymon\JWTAuth\Exceptions\JWTException::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, 
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

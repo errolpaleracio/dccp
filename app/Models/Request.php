@@ -4,18 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use App\Models\Transaction as Trans;
 
 class Request extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'study', 'document', 'copies', 'price', 'remarks', 'user_id'
+        'study', 'document', 'copies', 'price', 'transaction_id'
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function Transaction(){
+        return $this->belongsTo(Trans::class);
     }
 
     public function TotalAmount(){

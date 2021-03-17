@@ -16,12 +16,9 @@ class CreateRequestsTable extends Migration
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->string('document');
-            $table->string('remarks');
             $table->integer('copies');
             $table->double('price', 8, 2);
-            $table->string('status')->default('Pending')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('transaction_id');
             $table->timestamps();
         });
     }

@@ -18,7 +18,8 @@
                         Hello Admin!
                     @endrole
                     @role('registrar')
-                        Hello Registrar!
+                        <div class="mb-2">Hello Registrar!</div>
+                        <a href="{{ route('view_request') }}" class="btn btn-primary mr-2" style="inline-block">View Requests</a>
                     @endrole
                 </div>
             </div>
