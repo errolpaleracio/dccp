@@ -11,7 +11,6 @@
                     @role('student')
                     <div class="d-flex justify-content-center p-2 m-2">
                         <a href="{{ route('all_request') }}" class="btn btn-primary mr-2" style="inline-block">Request Form</a>
-                        <a class="btn btn-success" style="inline-block">Transaction</a>
                     </div>
                     @endrole
                     @role('admin')
