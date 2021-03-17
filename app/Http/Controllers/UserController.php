@@ -120,7 +120,7 @@ class UserController extends Controller
             'middle_name' => 'nullable',
             'last_name' => 'required',
             'username' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email',
             'roles' => 'required'
         ]);
     
