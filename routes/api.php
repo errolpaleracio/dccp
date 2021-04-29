@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('login', [App\Http\Controllers\Api\AuthController::class, 'login'])->name('api.login');
+Route::post('register', [App\Http\Controllers\Api\RegisterController::class, 'register'])->name('api.register');
